@@ -2,10 +2,10 @@
 
 InstaSky is a Instagram-inspired personal hompe page for anyone who:
 
-* Uses the [Bluesky social network](https://bsky.app) and wants to support its growth.
 * Has a spot on the web for a person home page, but doesn't want to build one from scratch.
-* Exited META's properties (Facebook, Instagram, ...) due to META's absusive practices, but misses - or just likes - the Instagram experience.
+* Left Instagram but misses their old IG profile page.
 * Prefers a media-rich experience over text-heavy microblogging.
+* Uses the [Bluesky social network](https://bsky.app) and wants to support its growth.
 
 ![desktop](/assets/desktop.png)
 
@@ -40,13 +40,14 @@ InstaSky is a thin veneer to Bluesky. That's by design, as one of its goals is t
 * Add a dark theme
 * Add Lightbox support for on-page image and video viewing (maybe)
 * Expose RSS feeds for Bluesky users in some clever way
+* Link to automatically InstaSky-wrapped target pages instead of always to Bluesky
 * Collaborate with one of the projects bringing media-rich experiences to ATproto, like [Spark.](https://sprk.so/)
 
 Your ideas are always welcome. Please open an issue or a PR. 
 
 ## Acknowledgements
 
-- Thanks to [ChatGPT](https://chatgpt.com) and [Claude.AI](https://Claude.AI) for contributing most of the Bluesky API interfaces and fixes to my CSS.
-- Thanks to [Remix Icon](https://remixicon.com/) for the elegant SVG for icons, enabling a binary-free initial distribution.
+- Thanks to [ChatGPT](https://chatgpt.com) and [Claude.AI](https://Claude.AI) for contributing most of the Bluesky API interfaces and CSS fixes.
+- Thanks to [Remix Icon](https://remixicon.com/) for the elegant SVG icons.
 
 Enjoy your media-rich home page while supporting a protocol that keeps you in control of your data!
