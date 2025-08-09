@@ -1,6 +1,6 @@
 # Welcome to InstaSky
 
-InstaSky is a Instagram-inspired personal hompe page for anyone who:
+InstaSky is an Instagram-inspired personal hompe page for anyone who:
 
 * Has a spot on the web for a person home page, but doesn't want to build one from scratch.
 * Left Instagram but misses their old IG profile page.
@@ -41,7 +41,7 @@ InstaSky is a thin veneer to Bluesky. That's by design, as one of its goals is t
 * Add Lightbox support for on-page image and video viewing (maybe)
 * Link to automatically InstaSky-wrapped target pages instead of always to Bluesky
 * Support external media (YouTube, Vimeo, TikTok, ...) link posts
-* Collaborate with one of the projects bringing media-rich experiences to ATproto, like [Spark.](https://sprk.so/)
+* Collaborate with one of the projects bringing media-rich experiences to ATproto, like [Spark](https://sprk.so/) and [Flashes.](https://bsky.app/profile/did:plc:24kqkpfy6z7avtgu3qg57vvl)
 
 Your ideas are always welcome. Please open an issue or a PR. 
 
