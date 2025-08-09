@@ -1,7 +1,7 @@
 // === CONFIGURATION ===
 const CONFIG = {
   HANDLE: "bsky.app",         // Set this to your handle, without the @
-  AUTHOR_ONLY: true,          // True for only your original posts; falst to include your reposts and replies
+  AUTHOR_ONLY: false,          // True for only your original posts; falst to include your reposts and replies
   PDS: "https://api.bsky.app" // Ignore; for potential later use.
 };
 

@@ -28,7 +28,7 @@ Using InstaSky assumes that you have a web server and a means to copy files to i
 1. Clone this repository.
 2. Edit /src/script.js in your favorite text editor. The first section is CONFIGURATION. 
     - Set HANDLE to be your Bluesky handle, without the @.
-    - Set AUTHOR_ONLY to be true (default) or false. True displays only posts that you created. false will include replies and reposts that include media.
+    - Set AUTHOR_ONLY to be true or false (default). True displays only posts that you created. false will include replies and reposts that include media.
 3. Copy the three files under /src (index.html, script.js, styles.css) into your web server's document root.
 
 That's it!

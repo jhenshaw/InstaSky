@@ -45,10 +45,12 @@ a, a:visited, a:active {
 
 .profile-avatar { 
   grid-area: avatar;
-  width: 150px; height: 150px;
+  width: 150px; 
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  align-self: start; justify-self: start;
+  align-self: center; 
+  justify-self: start;
 }
 
 .profile-topline { 
