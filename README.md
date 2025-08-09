@@ -26,7 +26,7 @@ While there are a few projects that will bring your Bluesky feed to a web page, 
 Using InstaSky assumes that you have a web server and a means to copy files to it. Ideally, you'll have a domain pointed to it. Once those things are true, just follow a few easy steps:
 
 1. Clone this repository.
-2. Edit /src/script.js in your favorite text editor. The firset section is CONFIGURATION. 
+2. Edit /src/script.js in your favorite text editor. The first section is CONFIGURATION. 
     - Set HANDLE to be your Bluesky handle, without the @.
     - Set AUTHOR_ONLY to be true (default) or false. True displays only posts that you created. false will include replies and reposts that include media.
 3. Copy the three files under /src (index.html, script.js, styles.css) into your web server's document root.
