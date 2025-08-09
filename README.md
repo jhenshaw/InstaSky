@@ -14,7 +14,7 @@ InstaSky is a Instagram-inspired personal hompe page for anyone who:
 While there are a few projects that will bring your Bluesky feed to a web page, and some applications that will give you media-filtered views of your Bluesky content, InstaSky does both at once:
 
 * Your own website (www.yourname.com) becomes a location to showcase your media posts.
-* Support AT Protocol growth with links back to Bluesky everywhere.
+* Supports AT Protocol growth with links back to Bluesky everywhere.
 * Faithfully replicates the desktop Instagram profile experience, including infinite scroll.
 * Delivers an elegant mobile, touch-friendly interface (whereas Instagram forced you to install their app).
 * Can be easily and thoroughly customized. No obfuscated CSS, no limited CSS overrides.
@@ -23,12 +23,12 @@ While there are a few projects that will bring your Bluesky feed to a web page, 
 
 ## Installation and Usage
 
-Using InstaSky assumes that you have a web server and a means to copy files to it. Ideally, you'll have a domain pointed to it. If those things are true, just follow a few easy steps:
+Using InstaSky assumes that you have a web server and a means to copy files to it. Ideally, you'll have a domain pointed to it. Once those things are true, just follow a few easy steps:
 
 1. Clone this repository.
 2. Edit /src/script.js in your favorite text editor. The firset section is CONFIGURATION. 
     - Set HANDLE to be your Bluesky handle, without the @.
-    - Set AUTHOR_ONLY to be true (default) or false. True displays only post that you created. false will include replies and reposts that include media.
+    - Set AUTHOR_ONLY to be true (default) or false. True displays only posts that you created. false will include replies and reposts that include media.
 3. Copy the three files under /src (index.html, script.js, styles.css) into your web server's document root.
 
 That's it!
