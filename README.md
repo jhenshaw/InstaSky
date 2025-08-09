@@ -46,8 +46,7 @@ Your ideas are always welcome. Please open an issue or a PR.
 
 ## Acknowledgements
 
-- Thanks to [ChatGPT](https://chatgpt.com) for contributing most of the Bluesky API interface code, which I am just now learning about.
-- Thanks to [Claude.AI](https://Claude.AI) continuous fixes to my CSS.
+- Thanks to [ChatGPT](https://chatgpt.com) and [Claude.AI](https://Claude.AI) for contributing most of the Bluesky API interface code fixes to my CSS.
 - Thanks to [Remix Icon](https://remixicon.com/) for the elegant SVG for icons, enabling a binary-free initial distribution.
 
 Enjoy your media-rich home page while supporting a protocol that keeps you in control of your data!
