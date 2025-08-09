@@ -1,0 +1,344 @@
+
+/* -------- BASE PAGE LAYOUT -------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0rem;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  width: 975px;
+  margin: 50px auto;
+}
+
+a, a:visited, a:active {
+  color: rgb(16, 131, 254);
+  text-decoration: none;
+}
+
+.empty { padding: 12px; color:#666; font-size: .95rem; }
+
+
+/* -------- PROFILE CARD -------- */
+#profile { 
+  max-width: 775px;
+  margin: 40px auto 45px;  /* center */
+  padding: 0 20px;         /* small gutters */
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "avatar topline"
+    "avatar rest";
+  column-gap: 40px;
+  align-items: start;
+}
+
+.profile-header-row { display: contents; }
+
+.profile-avatar { 
+  grid-area: avatar;
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-self: start; justify-self: start;
+}
+
+.profile-topline { 
+  grid-area: topline;
+  display: flex; flex-direction: row; align-items: center; gap: 12px; /* handle + follow inline */
+}
+
+.profile-rest { 
+  grid-area: rest;
+  display: flex; flex-direction: column; gap: 6px; margin-top: 6px;
+}
+
+.profile-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.profile-handle {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.profile-handle a, 
+.profile-handle a:visited, 
+.profile-handle a:active { 
+  color: black; 
+}
+
+.profile-counts {
+  display: flex;
+  gap: 32px;
+  font-size: 1.05rem;
+  padding: 18px 0px;
+  color: gray;
+}
+
+.profile-counts a,
+.profile-counts a:active,
+.profile-counts a:visited {
+  color: inherit;
+}
+
+.profile-counts a:hover * { color: #aaa !important;}
+
+.count-num { color: black; font-weight: 700; margin-right: 2px; }
+.count-label { color: gray; }
+
+.profile-desc {
+  white-space: pre-line;   /* preserves line breaks */
+  font-size: 1.0rem;
+  color: #222;
+  line-height: 1.2rem;
+}
+
+.follow-button,
+.follow-button:active,
+.follow-button:visited {
+  color: white !important;
+  background-color: royalblue;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  margin-left: 35px;
+}
+
+.follow-button:hover { background-color: rgb(23, 72, 219); }
+
+
+/* -------- POST GRID -------- */
+.post {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.single-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin: 0px;
+}
+
+.single-photo img,
+.single-photo video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cardbox {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.post {
+  box-sizing: border-box;
+  transition: transform 0.2s;
+}
+
+.multi-icon,
+.video-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.multi-icon svg, 
+.video-icon svg {
+  color: white;
+  width: 20px;
+  height: 20px;
+}
+
+.post:hover .multi-icon,
+.post:hover .video-icon {
+  opacity: 0.4;
+}
+
+.hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-meta {
+  display: none; 
+  gap: 30px;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.post:hover .overlay-meta {
+  display: flex;
+}
+
+.counts { display:inline-flex; gap:14px; }
+
+.count {
+  display: inline-flex;
+  align-items: center;   
+  gap: 0.25rem;
+  line-height: 1;      
+}
+
+.count svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.overlay-meta .count { color: white; }
+.meta-bar .count { color: #222; }
+
+.like { padding-right: 10px; }
+
+.reply { padding-left: 10px; }
+
+.meta-bar {
+  display: none;
+  padding: 6px 6px 8px;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #222;
+}
+
+.post:hover .hover-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* -------- TOUCH-ONLY INTERFACE -------- */
+@media (hover: none) {
+  .hover-overlay { display: none; }
+  .post { cursor: auto; }
+
+  .meta-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 14px;
+    padding: 8px 4px 10px;   
+    font-size: 1rem;
+  }
+
+  .cardbox {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+  }
+  .cardbox::-webkit-scrollbar {
+    display: none;             
+  }
+}
+
+/* -------- INTERMEDIATE/TABLET RESPONSIVE LAYOUT -------- */
+@media (max-width: 975px) {
+  .page { width: 98%; margin: 0 auto 40px auto; }
+}
+
+/* -------- MOBILE RESPONSIVE LAYOUT -------- */
+@media (max-width: 600px) {
+  .page {
+    margin-top: 20px;
+  }
+
+  #profile {
+    display: block;
+    max-width: none;
+    margin: 20px 0 40px;
+    padding: 0;
+  }
+
+  .profile-header-row {
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 12px;
+  }
+
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-topline {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 8px; 
+  }
+
+  
+  .profile-rest { margin-top: 12px; padding: 0 12px; }
+
+  .profile-counts {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; padding: 0; margin: 0; text-align: center;
+  }
+
+  .count-num { display: block; }
+
+  .profile-name {
+    font-size: 1.3rem;
+    margin-top: 25px;
+  }
+
+  .profile-handle { font-size: 20px; }
+
+  .follow-button,
+  .follow-button:active,
+  .follow-button:visited {
+    margin-left: 0px;
+    width: 100%;
+    max-width: 140px;   /* keep it tidy */
+    text-align: center;
+  }
+
+  .profile-counts a { padding: 6px 0; }
+
+  .profile-desc { line-height: 1.35rem; }
+
+  .cardbox {
+    display: flex;  
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 4px;  
+    padding-bottom: 1rem;
+  }
+
+  .post {
+    flex: 0 0 80%;
+    max-width: 80%;
+    scroll-snap-align: center;
+  }
+}
