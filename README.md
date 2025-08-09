@@ -13,10 +13,10 @@ InstaSky is a Instagram-inspired personal hompe page for anyone who:
 
 While there are a few projects that will bring your Bluesky feed to a web page, and some applications that will give you media-filtered views of your Bluesky content, InstaSky does both at once:
 
-* Your own website (www.yourname.com) becomes a location to showcase your media posts.
-* Supports AT Protocol growth with links back to Bluesky everywhere.
+* Your own website (www.yourname.com) becomes a location to showcase your media (image and video) posts.
 * Faithfully replicates the desktop Instagram profile experience, including infinite scroll.
 * Delivers an elegant mobile, touch-friendly interface (whereas Instagram forced you to install their app).
+* Supports AT Protocol growth with links back to Bluesky everywhere.
 * Can be easily and thoroughly customized. No obfuscated CSS, no limited CSS overrides.
 
 <img src="/assets/iphone.png" width="450px">
@@ -39,8 +39,8 @@ InstaSky is a thin veneer to Bluesky. That's by design, as one of its goals is t
 
 * Add a dark theme
 * Add Lightbox support for on-page image and video viewing (maybe)
-* Expose RSS feeds for Bluesky users in some clever way
 * Link to automatically InstaSky-wrapped target pages instead of always to Bluesky
+* Support external media (YouTube, Vimeo, TikTok, ...) link posts
 * Collaborate with one of the projects bringing media-rich experiences to ATproto, like [Spark.](https://sprk.so/)
 
 Your ideas are always welcome. Please open an issue or a PR. 
