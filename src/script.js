@@ -37,14 +37,13 @@ function formatCount(n) {
 function linkifyProfileText(text) {
   if (!text) return "";
 
-  // 1) Escape only &, <, >
+  // Escape only &, <, >
   let safe = text.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
 
-  // 2) URLs → placeholders (avoid commas/closing punctuation at the end)
+  // URLs → placeholders (avoid commas/closing punctuation at the end)
   const urlAnchors = [];
   const urlRegex = /\bhttps?:\/\/[^\s<>"',)\]]+/gi;
   safe = safe.replace(urlRegex, (rawUrl) => {
-    // Trim common trailing punctuation that isn't part of the URL
     const url = rawUrl.replace(/[),.\]]+$/, '');
     let display = url.replace(/^https?:\/\//i, '');
     if (display.length > 40) display = display.slice(0, 40) + "…";
@@ -53,28 +52,27 @@ function linkifyProfileText(text) {
     return `__URL_PLACEHOLDER_${urlAnchors.length - 1}__`;
   });
 
-  // 3) Emails → mailto:
-  // capture a possible leading char (non-word) so we can reinsert it
+  // Emails → mailto:
   const emailRegex = /(^|[^A-Za-z0-9_])([A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,})/g;
   safe = safe.replace(emailRegex, (_, pre, email) => {
     return `${pre}<a href="mailto:${email}">${email}</a>`;
   });
 
-  // 4) @handles → Bluesky profile links (require non-word before '@' so emails won't match)
+  // @handles → Bluesky profile links (require non-word before '@' so emails won't match)
   const handleRegex = /(^|[^A-Za-z0-9_])@([a-z0-9][a-z0-9.-]*\.[a-z]{2,})/gi;
   safe = safe.replace(handleRegex, (_, pre, handle) => {
     return `${pre}<a href="https://bsky.app/profile/${handle}" target="_blank" rel="noopener noreferrer">@${handle}</a>`;
   });
 
-  // 5) #hashtags
+  // #hashtags
   safe = safe.replace(/(^|[^A-Za-z0-9_])#([A-Za-z0-9_]+)/g, (_, pre, tag) =>
     `${pre}<a href="https://bsky.app/hashtag/${tag}" target="_blank" rel="noopener noreferrer">#${tag}</a>`
   );
 
-  // 6) Restore URLs
+  // Restore URLs
   safe = safe.replace(/__URL_PLACEHOLDER_(\d+)__/g, (_, i) => urlAnchors[Number(i)]);
 
-  // 7) Preserve line breaks
+  // Preserve line breaks
   return safe.replace(/\n/g, "<br>");
 }
 
