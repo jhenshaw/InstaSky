@@ -33,6 +33,16 @@ Using InstaSky assumes that you have a web server and a means to copy files to i
 
 That's it!
 
+## Optionally...
+
+In cloudflare/worker.js, you'll find a snippet of code that lets you to have your Bluesky RSS feed show up at your own domain's /feed.xml (like you.yourdomain.com/feed.xml). If you want RSS disoverability on your home page, just:
+
+1. Create a Cloudflare worker, paste in this code.
+2. Create a route for this worker, mapped to your domain's /feed.xml
+3. Specify "Fail open (proceed)" for the failure mode, and deploy!
+
+Within a few minutes, requests to https://you.yourdomain.com/feed.xml will return your Bluesky account's RSS feed.
+
 ## Future  Ideas
 
 InstaSky is a thin veneer to Bluesky. That's by design, as one of its goals is to drive traffic and usage to Bluesky. In the future, I plan to:
